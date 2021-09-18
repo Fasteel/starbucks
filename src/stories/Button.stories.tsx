@@ -11,11 +11,12 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  primary: true,
+  color: "primary",
   label: "Button",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
+  color: "secondary",
   label: "Button",
 };

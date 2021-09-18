@@ -50,6 +50,7 @@ const StyledButton = styled(BaseStyledButton)`
     return `
       background-color: white;
       color: ${theme.colors[color]};
+      border-color: ${theme.colors[color]};
       &:hover {
         background-color: rgba(0, 0, 0, 0.06);
       }

@@ -9,20 +9,14 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  color: "primary",
-  label: "Se connecter",
+export const Green = Template.bind({});
+Green.args = {
+  color: "green",
+  label: "Trouvez votre salon le plus proche",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   color: "secondary",
-  label: "Rejoindre maintenant",
-};
-
-export const Green = Template.bind({});
-Green.args = {
-  color: "green",
   label: "Trouvez votre salon le plus proche",
 };

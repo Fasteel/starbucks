@@ -10,4 +10,14 @@ I wan't to be a master at front-end development, so I train my skills with cloni
 
 ## TODO
 
--[] Install Styled Components
+-[x] Install Styled Components
+-[] Make components
+  -[] NavigationItem
+  -[] NavigationLogo
+  -[] Link
+  -[] NavigationPrimary
+  -[] NavigationSecondary
+  -[] ContentWrapper
+  -[] Heading
+  -[] Description
+  -[] 

@@ -36,7 +36,7 @@ const StyledButton = styled.button`
   transition: all 0.2s ease;
   cursor: pointer;
   &:active {
-    transform: scale(0.95);
+    transform: scale(.85);
   }
 `;
 

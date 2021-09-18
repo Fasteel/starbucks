@@ -1,48 +1,45 @@
-import React from 'react';
-import './button.css';
+import styled from "styled-components";
 
 interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
   label: string;
-  /**
-   * Optional click handler
-   */
+  primary?: boolean;
   onClick?: () => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-};
+const StyledButton = styled.button`
+  ${({ primary }: Partial<ButtonProps>) =>
+    primary
+      ? `
+    background-color: white;
+    color: black;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+    `
+      : `
+    background-color: black;
+    color: white;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  `}
+
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 50px;
+  padding: 7px 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  &:active {
+    transform: scale(0.95);
+  }
+`;
+
+export const Button = ({ label, ...rest }: ButtonProps) => (
+  <StyledButton {...rest}>{label}</StyledButton>
+);

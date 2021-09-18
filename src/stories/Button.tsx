@@ -1,29 +1,14 @@
 import styled from "styled-components";
+import theme from "./theme";
+import type { Colors } from "./theme";
 
 interface ButtonProps {
-  label: string;
-  primary?: boolean;
+  label?: string;
+  color: keyof Colors;
   onClick?: () => void;
 }
 
-const StyledButton = styled.button`
-  ${({ primary }: Partial<ButtonProps>) =>
-    primary
-      ? `
-    background-color: white;
-    color: black;
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.06);
-    }
-    `
-      : `
-    background-color: black;
-    color: white;
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-  `}
-
+const BaseStyledButton = styled.button`
   display: inline-block;
   border-style: solid;
   border-width: 1px;
@@ -36,8 +21,41 @@ const StyledButton = styled.button`
   transition: all 0.2s ease;
   cursor: pointer;
   &:active {
-    transform: scale(0.95);
+    transform: scale(0.85);
   }
+`;
+
+const StyledButton = styled(BaseStyledButton)`
+  ${({ color }: ButtonProps) => {
+    if (color === "primary") {
+      return `
+        background-color: ${theme.colors.primary};
+        color: ${theme.colors.secondary};
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.06);
+        }
+      `;
+    }
+
+    if (color === "secondary") {
+      return `
+        background-color: ${theme.colors.secondary};
+        color: ${theme.colors.primary};
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.7);
+        }
+      `;
+    }
+
+    return `
+      background-color: white;
+      color: ${theme.colors[color]};
+      border-color: ${theme.colors[color]};
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.06);
+      }
+    `;
+  }}
 `;
 
 export const Button = ({ label, ...rest }: ButtonProps) => (

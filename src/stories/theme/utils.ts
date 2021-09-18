@@ -11,11 +11,6 @@ export const getRgbValue = (hexadecimal: string) => {
   return { r, g, b };
 };
 
-export const getRgbStringValue = (hexadecimal: string) => {
-  const { r, g, b } = getRgbValue(hexadecimal);
-  return `rgb(${r}, ${g}, ${b})`;
-};
-
 export const getRgbaStringValue = (hexadecimal: string, opacity: number) => {
   const { r, g, b } = getRgbValue(hexadecimal);
   return `rgba(${r}, ${g}, ${b}, ${opacity})`;

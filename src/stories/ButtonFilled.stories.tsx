@@ -1,9 +1,10 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { APP_NAME } from ".";
 
 import { ButtonFilled } from "./Button";
 
 export default {
-  title: "Starbucks/ButtonFilled",
+  title: `${APP_NAME}/ButtonFilled`,
   component: ButtonFilled,
 } as ComponentMeta<typeof ButtonFilled>;
 

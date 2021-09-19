@@ -25,7 +25,7 @@ const IconWrapper = styled.span`
 const Label = styled.span`
   color: ${theme.colors.secondary};
   font-weight: 600;
-  font-family: "Open Sans", sans-serif;
+  font-family: "${theme.fonts.primary}", sans-serif;
   font-size: 0.9rem;
   letter-spacing: 0.014;
 `;

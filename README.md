@@ -17,8 +17,8 @@ npx @svgr/cli --icon pin.svg > pin.tsx
 
 -[x] Install Styled Components
 -[] Make components
-  -[] Link
-  -[] NavigationItem
+  -[x] Link
+  -[x] NavigationItem
   -[] NavigationLogo
   -[] NavigationPrimary
   -[] NavigationSecondary

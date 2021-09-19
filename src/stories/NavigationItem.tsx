@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import theme from "./theme";
 
-type NavigationItemProps = {
+export type NavigationItemProps = {
   label?: string;
   onClick?: () => void;
   active?: boolean;

@@ -1,15 +1,16 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { APP_NAME } from ".";
 import NavigationItem from "./NavigationItem";
+import NavigationWrapper from "./NavigationWrapper";
 
 export default {
   title: `${APP_NAME}/NavigationItem`,
   component: NavigationItem,
   decorators: [
     (Story) => (
-      <div style={{ height: "100px", display: "inline-block" }}>
+      <NavigationWrapper>
         <Story />
-      </div>
+      </NavigationWrapper>
     ),
   ],
 } as ComponentMeta<typeof NavigationItem>;

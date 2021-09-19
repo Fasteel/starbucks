@@ -8,13 +8,18 @@ I wan't to be a master at front-end development, so I train my skills with cloni
 
 - Wait a fix for storybook dependency https://github.com/storybookjs/storybook/issues/5183
 
+## Generate SVG
+
+cd ./src/stories/assets
+npx @svgr/cli --icon pin.svg > pin.tsx
+
 ## TODO
 
 -[x] Install Styled Components
 -[] Make components
+  -[] Link
   -[] NavigationItem
   -[] NavigationLogo
-  -[] Link
   -[] NavigationPrimary
   -[] NavigationSecondary
   -[] ContentWrapper

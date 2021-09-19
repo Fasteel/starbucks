@@ -9,9 +9,6 @@ describe("utils", () => {
       "Unvalid hexadecimal format"
     );
   });
-  it("getRgbStringValue return the correct value", () => {
-    expect(getRgbStringValue("#eb4034")).toEqual("rgb(235, 64, 52)");
-  });
   it("getRgbaStringValue return the correct value", () => {
     expect(getRgbaStringValue("#eb4034", 0.8)).toEqual(
       "rgba(235, 64, 52, 0.8)"

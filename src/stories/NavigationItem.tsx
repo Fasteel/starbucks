@@ -7,7 +7,17 @@ export type NavigationItemProps = {
   active?: boolean;
 };
 
+const ActiveIndicator = styled.span`
+  background-color: ${theme.colors.greenDarker};
+  height: 5px;
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+`;
+
 const Wrapper = styled.li<{ active?: boolean }>`
+  position: relative;
   list-style: none;
   font-family: "${theme.fonts.primary}", sans-serif;
   font-weight: 800;
@@ -15,8 +25,8 @@ const Wrapper = styled.li<{ active?: boolean }>`
   cursor: pointer;
   user-select: none;
   margin-right: 2.4rem;
+  margin-bottom: 0;
   height: 100%;
-  ${({ active }) => active && `border-bottom: 5px solid ${theme.colors.green};`}
 `;
 
 const Link = styled.a`
@@ -35,6 +45,7 @@ const Link = styled.a`
 const NavigationItem = ({ label, onClick, active }: NavigationItemProps) => (
   <Wrapper onClick={onClick} active={active}>
     <Link>{label}</Link>
+    {active && <ActiveIndicator />}
   </Wrapper>
 );
 

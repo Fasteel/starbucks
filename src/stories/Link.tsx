@@ -13,6 +13,8 @@ const LinkWrapper = styled.a`
   align-items: center;
   cursor: pointer;
   transition: opacity 0.5s;
+  user-select: none;
+  margin-right: 1.6rem;
   &:hover {
     opacity: 0.6;
   }

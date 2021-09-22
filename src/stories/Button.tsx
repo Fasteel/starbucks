@@ -15,7 +15,9 @@ const StyledButton = styled(ButtonBase)`
   ${({ color }: ButtonProps) => `
     background-color: white;
     color: ${theme.colors[color]};
-    border-color: ${theme.colors[color]};
+    border: 1px solid ${theme.colors[color]}; 
+    margin-left: 2.4rem;
+    margin-right: 1.6rem;
     &:hover {
       background-color: ${getRgbaStringValue(theme.colors[color], 0.09)};
     }
